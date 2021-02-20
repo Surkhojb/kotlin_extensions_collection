@@ -1,15 +1,3 @@
-package com.surkhojb.randomquizzie.extensions
-
-import android.app.Activity
-import android.content.Intent
-import android.graphics.Color
-import android.os.Bundle
-import android.view.View
-import androidx.core.content.ContextCompat
-import com.google.android.material.snackbar.Snackbar
-import com.surkhojb.randomquizzie.R
-import com.surkhojb.randomquizzie.feature.main.MainActivity
-import kotlin.reflect.KClass
 
 fun Activity.navigateTo(destination: KClass<MainActivity>, withExtras: Bundle? = null){
     val intent = Intent(this,destination.java)
