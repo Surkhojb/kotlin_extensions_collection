@@ -1,11 +1,15 @@
 
-fun Activity.navigateTo(destination: KClass<MainActivity>, withExtras: Bundle? = null){
+fun Activity.navigateTo(destination: KClass<*>, withExtras: Bundle? = null){
     val intent = Intent(this,destination.java)
     withExtras?.apply {
         intent.putExtras(this)
     }
 
     startActivity(intent)
+}
+
+fun Activity.openUrl(url: String){
+    this.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 }
 
 fun Activity.showError(targetView: View,messageResource: Int) {
